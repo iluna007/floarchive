@@ -1,0 +1,11 @@
+export default function ProjectRow({ item }) {
+  const status = item.others?.status ?? ''
+  return (
+    <>
+      <span className="project-date">{item.date}</span>
+      <span className="project-title">{item.title ?? ''}</span>
+      <span className="project-category">{item.category}</span>
+      <span className="project-status">{status}</span>
+    </>
+  )
+}

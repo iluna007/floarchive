@@ -1,0 +1,40 @@
+import { useState } from 'react'
+import { archive } from '../data/archive'
+import { getSortedArchive } from '../utils/sortArchive'
+import TableHeader from './TableHeader'
+import ProjectItemThumbnail from './ProjectItemThumbnail'
+import DetailPanel from './DetailPanel'
+import SortSelect from './SortSelect'
+
+export default function ThumbnailView({ selectedId, onSelect }) {
+  const [sortBy, setSortBy] = useState('year')
+  const { grouped, keys } = getSortedArchive(archive, sortBy)
+  const selectedItem = archive.find((item) => item.id === selectedId)
+
+  return (
+    <div className="main-split">
+      <div className="list-wrapper">
+        <div className="list-toolbar">
+          <TableHeader />
+          <SortSelect value={sortBy} onChange={setSortBy} />
+        </div>
+        <div className="project-list thumbnail-view">
+          {keys.map((key) => (
+            <section key={key} className="year-group">
+              {keys.length > 1 && <h2 className="year-label">{key}</h2>}
+              {grouped[key].map((item) => (
+                <ProjectItemThumbnail
+                  key={item.id}
+                  item={item}
+                  isSelected={selectedId === item.id}
+                  onSelect={onSelect}
+                />
+              ))}
+            </section>
+          ))}
+        </div>
+      </div>
+      <DetailPanel item={selectedItem} />
+    </div>
+  )
+}
