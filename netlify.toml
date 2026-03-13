@@ -1,3 +1,6 @@
 # Ensure optional dependencies (esbuild, rollup native binaries) are installed on Linux
+[build]
+  command = "npm install --include=optional && npm run build"
+
 [build.environment]
   NPM_FLAGS = "--include=optional"
