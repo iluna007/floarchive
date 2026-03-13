@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "data:import": "node src/data/csv-to-archive.js"
   },
   "dependencies": {
     "mapbox-gl": "^3.20.0",

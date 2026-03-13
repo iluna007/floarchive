@@ -2,8 +2,10 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { archive } from '../data/archive'
+import { GEOJSON_LAYERS } from '../data/geojsonLayers'
 import DetailPanel from '../components/DetailPanel'
 import InteractiveTimeline from '../components/InteractiveTimeline'
+import MapLayersPanel from '../components/MapLayersPanel'
 import { getTimeRange, filterItemsByRange } from '../utils/datetime'
 import { getItemPrimaryColor } from '../utils/categoryColors'
 
@@ -41,12 +43,116 @@ function createMapMarker(item, map, onSelect) {
   return marker
 }
 
+function geometryTypeToMapboxLayer(geomType) {
+  const t = (geomType || '').toLowerCase()
+  if (t === 'point' || t === 'multipoint') return 'circle'
+  if (t === 'linestring' || t === 'multilinestring') return 'line'
+  if (t === 'polygon' || t === 'multipolygon') return 'fill'
+  return 'line'
+}
+
+async function addGeojsonLayer(map, layerConfig, visible) {
+  const sourceId = `geojson-${layerConfig.id}`
+  const layerId = `geojson-${layerConfig.id}-layer`
+  try {
+    const res = await fetch(layerConfig.url)
+    if (!res.ok) throw new Error(res.statusText)
+    const geojson = await res.json()
+    const firstType =
+      geojson?.features?.[0]?.geometry?.type ?? (layerConfig.type === 'point' ? 'Point' : 'Polygon')
+    const layerType = layerConfig.type === 'point' ? 'circle' : geometryTypeToMapboxLayer(firstType)
+
+    const outlineLayerId = `${layerId}-line`
+    if (map.getSource(sourceId)) {
+      if (map.getLayer(outlineLayerId)) map.removeLayer(outlineLayerId)
+      if (map.getLayer(layerId)) map.removeLayer(layerId)
+      map.removeSource(sourceId)
+    }
+
+    map.addSource(sourceId, { type: 'geojson', data: geojson })
+    const visibility = visible ? 'visible' : 'none'
+
+    const c = layerConfig
+
+    if (layerType === 'circle') {
+      map.addLayer(
+        {
+          id: layerId,
+          type: 'circle',
+          source: sourceId,
+          paint: {
+            'circle-radius': c.pointRadius ?? 6,
+            'circle-color': c.pointColor ?? '#2563eb',
+            'circle-stroke-width': c.pointStrokeWidth ?? 1,
+            'circle-stroke-color': c.pointStrokeColor ?? '#fff',
+          },
+          layout: { visibility },
+        },
+        undefined
+      )
+    } else if (layerType === 'line') {
+      const linePaint = {
+        'line-color': c.lineColor ?? '#2563eb',
+        'line-width': c.lineWidth ?? 2,
+      }
+      if (c.lineDasharray && c.lineDasharray.length) linePaint['line-dasharray'] = c.lineDasharray
+      map.addLayer(
+        {
+          id: layerId,
+          type: 'line',
+          source: sourceId,
+          paint: linePaint,
+          layout: { visibility },
+        },
+        undefined
+      )
+    } else {
+      map.addLayer(
+        {
+          id: layerId,
+          type: 'fill',
+          source: sourceId,
+          paint: {
+            'fill-color': c.fillColor ?? '#2563eb',
+            'fill-opacity': c.fillOpacity ?? 0.35,
+            'fill-outline-color': c.fillOutlineColor ?? '#1d4ed8',
+          },
+          layout: { visibility },
+        },
+        undefined
+      )
+      if (c.lineDasharray && c.lineDasharray.length) {
+        map.addLayer(
+          {
+            id: outlineLayerId,
+            type: 'line',
+            source: sourceId,
+            paint: {
+              'line-color': c.lineColor ?? c.fillOutlineColor ?? '#1d4ed8',
+              'line-width': c.lineWidth ?? 2,
+              'line-dasharray': c.lineDasharray,
+            },
+            layout: { visibility },
+          },
+          undefined
+        )
+      }
+    }
+    return layerId
+  } catch (err) {
+    console.warn('GeoJSON layer failed:', layerConfig.id, err)
+    return null
+  }
+}
+
 export default function InteractiveMap({ theme = 'light' }) {
   const mapStyle = theme === 'dark' ? MAP_STYLE_DARK : MAP_STYLE_LIGHT
   const mapContainer = useRef(null)
   const mapRef = useRef(null)
   const markersRef = useRef([])
+  const geojsonLayerIdsRef = useRef([])
   const [selectedItem, setSelectedItem] = useState(null)
+  const [visibleLayerIds, setVisibleLayerIds] = useState([])
   const [timelineScale, setTimelineScale] = useState('month')
   const [viewRange, setViewRange] = useState({ min: fullRange.min, max: fullRange.max })
 
@@ -71,6 +177,8 @@ export default function InteractiveMap({ theme = 'light' }) {
 
   const handleSelectRef = useRef(handleSelectItem)
   handleSelectRef.current = handleSelectItem
+  const visibleLayerIdsRef = useRef(visibleLayerIds)
+  visibleLayerIdsRef.current = visibleLayerIds
 
   useEffect(() => {
     if (!MAPBOX_TOKEN || !mapContainer.current || itemsWithDatetimeAndCoords.length === 0) return
@@ -90,18 +198,36 @@ export default function InteractiveMap({ theme = 'light' }) {
     })
 
     mapRef.current = map
+    geojsonLayerIdsRef.current = []
 
     const onSelect = (item) => handleSelectRef.current(item)
-    const markers = itemsWithDatetimeAndCoords.map((item) =>
-      createMapMarker(item, map, onSelect)
-    )
-    markersRef.current = markers
+
+    map.once('load', () => {
+      const markers = itemsWithDatetimeAndCoords.map((item) =>
+        createMapMarker(item, map, onSelect)
+      )
+      markersRef.current = markers
+
+      GEOJSON_LAYERS.forEach((cfg) => {
+        const visible = visibleLayerIdsRef.current.includes(cfg.id)
+        addGeojsonLayer(map, cfg, visible).then((layerId) => {
+          if (layerId) {
+            geojsonLayerIdsRef.current.push(layerId)
+            const nowVisible = visibleLayerIdsRef.current.includes(cfg.id)
+            if (map.getLayer(layerId)) {
+              map.setLayoutProperty(layerId, 'visibility', nowVisible ? 'visible' : 'none')
+            }
+          }
+        })
+      })
+    })
 
     return () => {
-      markers.forEach((m) => m.remove())
+      markersRef.current.forEach((m) => m.remove())
       markersRef.current = []
       map.remove()
       mapRef.current = null
+      geojsonLayerIdsRef.current = []
     }
   }, [])
 
@@ -121,6 +247,19 @@ export default function InteractiveMap({ theme = 'light' }) {
         createMapMarker(item, map, onSelect)
       )
       markersRef.current = markers
+      geojsonLayerIdsRef.current = []
+      GEOJSON_LAYERS.forEach((cfg) => {
+        const visible = visibleLayerIdsRef.current.includes(cfg.id)
+        addGeojsonLayer(map, cfg, visible).then((layerId) => {
+          if (layerId) {
+            geojsonLayerIdsRef.current.push(layerId)
+            const nowVisible = visibleLayerIdsRef.current.includes(cfg.id)
+            if (map.getLayer(layerId)) {
+              map.setLayoutProperty(layerId, 'visibility', nowVisible ? 'visible' : 'none')
+            }
+          }
+        })
+      })
     })
   }, [mapStyle])
 
@@ -132,6 +271,20 @@ export default function InteractiveMap({ theme = 'light' }) {
       if (el) el.style.display = visibleIds.has(id) ? '' : 'none'
     })
   }, [visibleItems])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+    GEOJSON_LAYERS.forEach((cfg) => {
+      const layerId = `geojson-${cfg.id}-layer`
+      if (!map.getLayer(layerId)) return
+      const visible = visibleLayerIds.includes(cfg.id)
+      const v = visible ? 'visible' : 'none'
+      map.setLayoutProperty(layerId, 'visibility', v)
+      const outlineId = `${layerId}-line`
+      if (map.getLayer(outlineId)) map.setLayoutProperty(outlineId, 'visibility', v)
+    })
+  }, [visibleLayerIds])
 
   if (!MAPBOX_TOKEN) {
     return (
@@ -149,20 +302,37 @@ export default function InteractiveMap({ theme = 'light' }) {
     )
   }
 
+  const handleToggleLayer = (layerId) => {
+    setVisibleLayerIds((prev) =>
+      prev.includes(layerId) ? prev.filter((id) => id !== layerId) : [...prev, layerId]
+    )
+  }
+
   return (
     <div className="interactive-map-page">
-      <InteractiveTimeline
-        items={itemsWithDatetime}
-        visibleItems={visibleItems}
-        selectedItem={selectedItem}
-        onSelectItem={handleSelectItem}
-        scale={timelineScale}
-        onScaleChange={setTimelineScale}
-        viewRange={viewRange}
-        onViewRangeChange={setViewRange}
-        fullRange={fullRange}
-      />
-      <div ref={mapContainer} className="interactive-map-container" aria-label="Interactive map" />
+      <div className="interactive-map-left">
+        <InteractiveTimeline
+          items={itemsWithDatetime}
+          visibleItems={visibleItems}
+          selectedItem={selectedItem}
+          onSelectItem={handleSelectItem}
+          scale={timelineScale}
+          onScaleChange={setTimelineScale}
+          viewRange={viewRange}
+          onViewRangeChange={setViewRange}
+          fullRange={fullRange}
+        />
+      </div>
+      <div className="interactive-map-container" aria-label="Map area">
+        <div ref={mapContainer} className="interactive-map-gl" />
+        <div className="map-layers-overlay">
+          <MapLayersPanel
+            layers={GEOJSON_LAYERS}
+            visibleLayerIds={visibleLayerIds}
+            onToggleLayer={handleToggleLayer}
+          />
+        </div>
+      </div>
       {selectedItem && (
         <div
           className="interactive-map-detail"
