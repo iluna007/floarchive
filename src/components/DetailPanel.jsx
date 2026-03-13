@@ -1,8 +1,11 @@
-export default function DetailPanel({ item }) {
+import LocationMap from './LocationMap'
+
+export default function DetailPanel({ item, hideMap }) {
   if (!item) return null
 
   const title = item.title ?? ''
   const hasImages = item.images?.length > 0
+  const hasCoordinates = item.coordinates && (item.coordinates.lat != null && item.coordinates.lng != null)
 
   return (
     <aside className="detail-panel">
@@ -17,10 +20,13 @@ export default function DetailPanel({ item }) {
       )}
       <h3 className="detail-title">{title}</h3>
       <p className="project-description">{item.description}</p>
-      {item.gpsCoordinates && (
-        <p className="detail-gps">
-          <small>📍 {item.gpsCoordinates}</small>
-        </p>
+      {hasCoordinates && (
+        <>
+          <p className="detail-gps">
+            <small>📍 {item.gpsCoordinates ?? `${item.coordinates.lat}, ${item.coordinates.lng}`}</small>
+          </p>
+          {!hideMap && <LocationMap coordinates={item.coordinates} />}
+        </>
       )}
       {item.video && (
         <div className="detail-media">
