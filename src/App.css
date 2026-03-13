@@ -457,6 +457,269 @@
   margin-bottom: 0;
 }
 
+/* Sound Analysis page - SoundCloud-style list */
+.sound-analysis-table-container {
+  margin-top: 1.5rem;
+}
+
+.sound-track-header {
+  display: grid;
+  grid-template-columns: 2.5rem 2rem 3rem 1fr 4rem minmax(120px, 1fr);
+  gap: 0.75rem 1rem;
+  align-items: center;
+  padding: 0.5rem 0 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.sound-track-header-info {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sound-sort-btn {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.sound-sort-btn:hover {
+  color: var(--color-text-secondary);
+}
+
+.sound-sort-btn.active {
+  color: var(--color-text);
+}
+
+.sound-analysis-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sound-year-group {
+  margin-bottom: 0.5rem;
+}
+
+.sound-year-label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.sound-year-group:first-child .sound-year-label {
+  margin-top: 0;
+}
+
+.sound-track-row {
+  display: grid;
+  grid-template-columns: 2.5rem 2rem 3rem 1fr 4rem minmax(120px, 1fr);
+  gap: 0.75rem 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color 0.15s;
+  grid-template-rows: auto;
+}
+
+.sound-track-row:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.sound-track-row.playing {
+  background-color: var(--color-bg-secondary);
+}
+
+.sound-track-row.expanded {
+  grid-template-rows: auto 1fr;
+}
+
+.sound-track-row .sound-track-play,
+.sound-track-row .sound-track-num,
+.sound-track-row .sound-track-artwork,
+.sound-track-row .sound-track-info,
+.sound-track-row .sound-track-duration,
+.sound-track-row .sound-track-waveform {
+  grid-row: 1;
+}
+
+.sound-track-row .sound-track-expanded {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding: 1rem 0 1rem 3.5rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 0.5rem;
+}
+
+.sound-track-play {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.sound-track-play:hover {
+  transform: scale(1.05);
+}
+
+.sound-track-num {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.sound-track-artwork {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  flex-shrink: 0;
+}
+
+.sound-track-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sound-track-artwork-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-border);
+}
+
+.sound-track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.sound-track-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sound-track-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.sound-track-duration {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.sound-track-waveform {
+  min-width: 0;
+}
+
+.sound-track-waveform-bars {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  height: 1.25rem;
+}
+
+.sound-track-waveform-bar {
+  display: block;
+  width: 3px;
+  min-height: 4px;
+  background: var(--color-text-muted);
+  opacity: 0.6;
+  border-radius: 1px;
+}
+
+.sound-track-row.playing .sound-track-waveform-bar {
+  opacity: 1;
+  background: var(--color-text);
+}
+
+.sound-track-audio-full {
+  margin-bottom: 1rem;
+}
+
+.sound-track-audio-full audio {
+  width: 100%;
+  max-width: 400px;
+}
+
+.create-spectrogram {
+  margin-top: 1rem;
+}
+
+.create-spectrogram-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.create-spectrogram-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.create-spectrogram-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.create-spectrogram-error {
+  margin: 0.5rem 0 0;
+  color: var(--color-error, #c00);
+  font-size: 0.9rem;
+}
+
+.spectrogram-canvas-wrapper {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #000;
+  border-radius: 8px;
+}
+
+.spectrogram-canvas-container {
+  overflow-x: auto;
+}
+
+.spectrogram-canvas {
+  display: block;
+}
+
+.spectrogram-audio {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.spectrogram-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
 /* Interactive Map page - full viewport */
 .interactive-map-page {
   flex: 1;

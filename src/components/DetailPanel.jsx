@@ -1,6 +1,6 @@
 import LocationMap from './LocationMap'
 
-export default function DetailPanel({ item, hideMap }) {
+export default function DetailPanel({ item, hideMap, theme = 'light' }) {
   if (!item) return null
 
   const title = item.title ?? ''
@@ -25,17 +25,22 @@ export default function DetailPanel({ item, hideMap }) {
           <p className="detail-gps">
             <small>📍 {item.gpsCoordinates ?? `${item.coordinates.lat}, ${item.coordinates.lng}`}</small>
           </p>
-          {!hideMap && <LocationMap coordinates={item.coordinates} />}
+          {!hideMap && <LocationMap coordinates={item.coordinates} theme={theme} />}
+          {item.audioRecording && (
+            <div className="detail-media">
+              <audio src={item.audioRecording} controls />
+            </div>
+          )}
         </>
+      )}
+      {!hasCoordinates && item.audioRecording && (
+        <div className="detail-media">
+          <audio src={item.audioRecording} controls />
+        </div>
       )}
       {item.video && (
         <div className="detail-media">
           <video src={item.video} controls />
-        </div>
-      )}
-      {item.audioRecording && (
-        <div className="detail-media">
-          <audio src={item.audioRecording} controls />
         </div>
       )}
     </aside>

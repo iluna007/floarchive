@@ -55,7 +55,7 @@ export default function App() {
   const isThumbnailView = view === VIEWS.thumbnail
 
   function renderContent() {
-    if (route === 'map') return <InteractiveMap />
+    if (route === 'map') return <InteractiveMap theme={theme} />
     if (route === 'sound') return <SoundAnalysis />
     if (route === 'interviews') return <Interviews />
     if (route === 'radar') return <RadarSystems />
@@ -63,7 +63,7 @@ export default function App() {
     if (route === 'reflections') return <Reflections />
 
     return isThumbnailView ? (
-      <ThumbnailView selectedId={selectedId} onSelect={selectProject} />
+      <ThumbnailView selectedId={selectedId} onSelect={selectProject} theme={theme} />
     ) : (
       <FullListView onProjectClick={openInThumbnailView} />
     )

@@ -5,7 +5,7 @@ import TableHeader from './TableHeader'
 import ProjectItemThumbnail from './ProjectItemThumbnail'
 import DetailPanel from './DetailPanel'
 
-export default function ThumbnailView({ selectedId, onSelect }) {
+export default function ThumbnailView({ selectedId, onSelect, theme = 'light' }) {
   const [sortBy, setSortBy] = useState('year')
   const { grouped, keys } = getSortedArchive(archive, sortBy)
   const selectedItem = archive.find((item) => item.id === selectedId)
@@ -32,7 +32,7 @@ export default function ThumbnailView({ selectedId, onSelect }) {
           </div>
         </div>
       </div>
-      <DetailPanel item={selectedItem} />
+      <DetailPanel item={selectedItem} theme={theme} />
     </div>
   )
 }

@@ -11,7 +11,7 @@
  * - description: string
  * - images: string[]
  * - video: string | null
- * - audioRecording: string | null
+ * - audioRecording: string | null (path to file in data/audio files/)
  * - others: object (status, tags, etc.)
  */
 
@@ -28,7 +28,7 @@ export const archive = [
     description: 'Analog-inspired webstore and archiving platform. Initial mockups, page layout, text treatment, color choice, and illustrations.',
     images: ['https://picsum.photos/seed/cp1/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba3.WAV', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -43,7 +43,7 @@ export const archive = [
     description: 'Series of branding assets and guidelines. Custom hand-drawn logo used in several applications including website and clothing tags.',
     images: ['https://picsum.photos/seed/cp2/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba1.mp4', import.meta.url).href,
     others: { status: 'Ongoing' },
   },
   {
@@ -58,7 +58,7 @@ export const archive = [
     description: 'Commissioned cover artwork for the ongoing interview publication SPARK.',
     images: ['https://picsum.photos/seed/spark/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba2.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -73,7 +73,7 @@ export const archive = [
     description: 'Single-weight font inspired by lightweight sanserif fonts of the early 2000s. Light and slick with a sense of cheekiness.',
     images: ['https://picsum.photos/seed/type/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba3.WAV', import.meta.url).href,
     others: { status: 'Ongoing' },
   },
   {
@@ -91,7 +91,7 @@ export const archive = [
       'https://picsum.photos/seed/shirt1b/800/500',
     ],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba1.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -106,7 +106,7 @@ export const archive = [
     description: '2/4 Drawcord lines that synch the back completely. Each seam covered with waterproofing tape for a seamless look.',
     images: ['https://picsum.photos/seed/shirt2/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba2.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -121,7 +121,7 @@ export const archive = [
     description: '1/4 Initial test within the series, altering fit using only simple sewing lines and seam tape for a fluid look.',
     images: ['https://picsum.photos/seed/shirt3/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba3.WAV', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -136,7 +136,7 @@ export const archive = [
     description: 'Collaborative pop-up poster design for the Constant Practice x Homme Essentials event.',
     images: ['https://picsum.photos/seed/poster1/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba1.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -151,7 +151,7 @@ export const archive = [
     description: 'Street photography documenting urban moments in Berlin.',
     images: ['https://picsum.photos/seed/berlin1/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba2.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -166,7 +166,7 @@ export const archive = [
     description: 'Project manager for the yearly Senior book project. Set of three books spanning over 700 student photos.',
     images: ['https://picsum.photos/seed/yearbook/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba3.WAV', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -181,7 +181,7 @@ export const archive = [
     description: 'Series of reflective posters exploring material and light.',
     images: ['https://picsum.photos/seed/reflective/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba1.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -196,7 +196,7 @@ export const archive = [
     description: 'Drawings embossed over photos. Each drawing specific to the moment. Embossing and image present initial reaction to each scene.',
     images: ['https://picsum.photos/seed/ghost/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba2.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -211,7 +211,7 @@ export const archive = [
     description: 'Collaborative photo book. Collection of photos spanning years, all including some form of striped pattern.',
     images: ['https://picsum.photos/seed/stripes/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba3.WAV', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -226,7 +226,7 @@ export const archive = [
     description: 'Catalogue design for contemporary artist Bram Braam. Work spanning from 2022 to 2014.',
     images: ['https://picsum.photos/seed/bram/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba1.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
   {
@@ -241,7 +241,7 @@ export const archive = [
     description: 'Early studies and explorations at Carrs Pond.',
     images: ['https://picsum.photos/seed/pond/800/500'],
     video: null,
-    audioRecording: null,
+    audioRecording: new URL('./audio files/prueba2.mp4', import.meta.url).href,
     others: { status: 'Completed' },
   },
 ]

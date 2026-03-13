@@ -23,7 +23,7 @@ const itemsWithDatetimeAndCoords = itemsWithDatetime.filter(
 
 const fullRange = getTimeRange(itemsWithDatetime)
 
-export default function InteractiveMap() {
+export default function InteractiveMap({ theme = 'light' }) {
   const mapContainer = useRef(null)
   const mapRef = useRef(null)
   const markersRef = useRef([])
@@ -146,7 +146,7 @@ export default function InteractiveMap() {
           >
             ×
           </button>
-          <DetailPanel item={selectedItem} hideMap />
+          <DetailPanel item={selectedItem} hideMap theme={theme} />
         </div>
       )}
     </div>
