@@ -173,7 +173,12 @@ export default function InteractiveMap({ theme = 'light' }) {
       />
       <div ref={mapContainer} className="interactive-map-container" aria-label="Interactive map" />
       {selectedItem && (
-        <div className="interactive-map-detail">
+        <div
+          className="interactive-map-detail"
+          style={{
+            borderLeftColor: getItemPrimaryColor(selectedItem),
+          }}
+        >
           <button
             type="button"
             className="interactive-map-close"

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Category colors for timeline and map markers.
  */
 export const CATEGORY_COLORS = {
@@ -19,6 +19,17 @@ export function getCategoryColor(category) {
 export function getItemPrimaryColor(item) {
   const cats = Array.isArray(item?.category) ? item.category : item?.category ? [item.category] : []
   return cats.length > 0 ? getCategoryColor(cats[0]) : DEFAULT_COLOR
+}
+
+/** Hex to rgba with alpha for translucent backgrounds */
+export function hexToRgba(hex, alpha = 0.2) {
+  if (!hex || typeof hex !== 'string') return `rgba(128, 128, 128, ${alpha})`
+  const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i)
+  if (!m) return `rgba(128, 128, 128, ${alpha})`
+  const r = parseInt(m[1], 16)
+  const g = parseInt(m[2], 16)
+  const b = parseInt(m[3], 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
 export function getItemCategories(item) {

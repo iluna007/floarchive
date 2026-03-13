@@ -1084,7 +1084,7 @@
   max-width: 45%;
   padding: 0 2rem 2rem;
   overflow-y: auto;
-  border-left: 1px solid var(--color-border);
+  border-left: 6px solid;
   background: var(--color-bg);
   position: relative;
   animation: slideIn 0.3s ease;
