@@ -12,6 +12,7 @@ export const ROUTES = {
   radar: 'radar',
   timeline: 'timeline',
   reflections: 'reflections',
+  about: 'about',
 }
 
 export const NAV_ITEMS = [
@@ -22,6 +23,7 @@ export const NAV_ITEMS = [
   { key: 'radar', label: 'Radar Systems', hash: '#radar' },
   { key: 'timeline', label: 'Historical Timeline', hash: '#timeline' },
   { key: 'reflections', label: 'Reflections', hash: '#reflections' },
+  { key: 'about', label: 'About', hash: '#about' },
 ]
 
 export function getViewFromHash() {
@@ -38,5 +40,6 @@ export function getRouteFromHash() {
   if (hash === 'radar') return 'radar'
   if (hash === 'timeline') return 'timeline'
   if (hash === 'reflections') return 'reflections'
+  if (hash === 'about') return 'about'
   return 'archive'
 }

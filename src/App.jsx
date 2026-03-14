@@ -1,7 +1,8 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { getViewFromHash, getRouteFromHash, VIEWS } from './constants'
-import { Header, Footer } from './components'
-import { Interviews, RadarSystems, HistoricalTimeline, Reflections } from './pages'
+import { Header } from './components'
+import { getStoredBgColor, setStoredBgColor } from './components/BackgroundColorPicker'
+import { Interviews, RadarSystems, HistoricalTimeline, Reflections, About } from './pages'
 import './App.css'
 
 const InteractiveMap = lazy(() => import('./pages/InteractiveMap'))
@@ -22,11 +23,22 @@ export default function App() {
   const [route, setRoute] = useState(getRouteFromHash)
   const [selectedId, setSelectedId] = useState(null)
   const [theme, setTheme] = useState(getInitialTheme)
+  const [bgColor, setBgColor] = useState(getStoredBgColor())
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem(THEME_KEY, theme)
   }, [theme])
+
+  useEffect(() => {
+    if (bgColor) {
+      document.documentElement.style.setProperty('--color-bg', bgColor)
+      setStoredBgColor(bgColor)
+    } else {
+      document.documentElement.style.removeProperty('--color-bg')
+      setStoredBgColor(null)
+    }
+  }, [bgColor])
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
@@ -59,6 +71,7 @@ export default function App() {
     if (route === 'radar') return <RadarSystems />
     if (route === 'timeline') return <HistoricalTimeline />
     if (route === 'reflections') return <Reflections />
+    if (route === 'about') return <About />
 
     return isThumbnailView ? (
       <ThumbnailView selectedId={selectedId} onSelect={selectProject} theme={theme} />
@@ -69,15 +82,13 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header currentRoute={route} isThumbnailView={isThumbnailView} theme={theme} onThemeToggle={toggleTheme} />
+      <Header currentRoute={route} isThumbnailView={isThumbnailView} theme={theme} onThemeToggle={toggleTheme} bgColor={bgColor} onBgColorChange={setBgColor} />
 
       <main className="main">
         <Suspense fallback={<div className="main-loading" aria-live="polite">Cargando…</div>}>
           {renderContent()}
         </Suspense>
       </main>
-
-      <Footer />
     </div>
   )
 }

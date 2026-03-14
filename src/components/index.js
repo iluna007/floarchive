@@ -1,7 +1,7 @@
 export { default as Header } from './Header'
 export { default as MainNav } from './MainNav'
 export { default as ThemeToggle } from './ThemeToggle'
-export { default as Footer } from './Footer'
+export { default as BackgroundColorPicker } from './BackgroundColorPicker'
 export { default as InteractiveTimeline } from './InteractiveTimeline'
 export { default as TableHeader } from './TableHeader'
 export { default as ProjectRow } from './ProjectRow'
