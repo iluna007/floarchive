@@ -822,7 +822,7 @@
 .sound-year-label {
   font-size: 1rem;
   font-weight: 600;
-  margin: 1.25rem 0 1.25rem;  /* Equal top and bottom margin */
+  margin: 1.2rem 0 1.2rem;  /* Equal top and bottom margin */
   padding-top: 0.35rem;
   line-height: 1.1;
   color: var(--color-text-muted);
