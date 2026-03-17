@@ -27,7 +27,7 @@ export const archive = [
     ],
     "description": "Generic description for item 1.",
     "images": [
-      "https://placehold.co/800x500/9CAF88/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFFFFF'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -59,7 +59,7 @@ export const archive = [
     ],
     "description": "Generic description for item 2.",
     "images": [
-      "https://placehold.co/800x500/FF0000/FFFFFF/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFE6E6'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -90,7 +90,7 @@ export const archive = [
     ],
     "description": "Generic description for item 3.",
     "images": [
-      "https://placehold.co/800x500/C5A48D/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFCCCC'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -123,7 +123,7 @@ export const archive = [
     ],
     "description": "Generic description for item 4.",
     "images": [
-      "https://placehold.co/800x500/FFFFFF/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFB3B3'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -154,8 +154,8 @@ export const archive = [
     ],
     "description": "Generic description for item 5.",
     "images": [
-      "https://placehold.co/800x500/FFFF00/000000/png?format=png",
-      "https://placehold.co/800x500/FFFF00/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF9999'/%3E%3C/svg%3E",
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF9999'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -187,7 +187,7 @@ export const archive = [
     ],
     "description": "Generic description for item 6.",
     "images": [
-      "https://placehold.co/800x500/8BB5A0/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF8080'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -218,7 +218,7 @@ export const archive = [
     ],
     "description": "Generic description for item 7.",
     "images": [
-      "https://placehold.co/800x500/39FF14/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF6666'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -250,7 +250,7 @@ export const archive = [
     ],
     "description": "Generic description for item 8.",
     "images": [
-      "https://placehold.co/800x500/D4C5AA/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF4C4C'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -281,7 +281,7 @@ export const archive = [
     ],
     "description": "Generic description for item 9.",
     "images": [
-      "https://placehold.co/800x500/A3A9AA/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF6633'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -313,7 +313,7 @@ export const archive = [
     ],
     "description": "Generic description for item 10.",
     "images": [
-      "https://placehold.co/800x500/C97C5D/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF8040'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -345,7 +345,7 @@ export const archive = [
     ],
     "description": "Generic description for item 11.",
     "images": [
-      "https://placehold.co/800x500/7A8B6B/FFFFFF/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF994C'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -377,7 +377,7 @@ export const archive = [
     ],
     "description": "Generic description for item 12.",
     "images": [
-      "https://placehold.co/800x500/9A8B9F/FFFFFF/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFB359'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -409,7 +409,7 @@ export const archive = [
     ],
     "description": "Generic description for item 13.",
     "images": [
-      "https://placehold.co/800x500/2F4F2F/FFFFFF/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23CCCC66'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -440,7 +440,7 @@ export const archive = [
     ],
     "description": "Generic description for item 14.",
     "images": [
-      "https://placehold.co/800x500/C9B9A3/000000/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2399CC66'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -473,7 +473,7 @@ export const archive = [
     ],
     "description": "Generic description for item 15.",
     "images": [
-      "https://placehold.co/800x500/0000FF/FFFFFF/png?format=png"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2366CC66'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
