@@ -536,7 +536,7 @@
 .category-label {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 1rem 0 0.5rem;
+  margin: 1.2rem 0 1.2rem;  /* Equal top and bottom margin */
   padding-top: 0.45rem;  /* This pushes the text down */
   letter-spacing: 0.02em;
   line-height: 1.2;      /* Adds a bit more breathing room */
@@ -544,7 +544,7 @@
 
 .year-label:first-child,
 .category-label:first-child {
-  margin-top: -0.2;
+  margin-top: 1.2;
 }
 
 /* Project row - grid layout like Maxton */
