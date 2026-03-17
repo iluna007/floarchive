@@ -920,7 +920,7 @@
 
 .sound-track-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: columnn;
   gap: 0.15rem;
   min-width: 0;
 }
