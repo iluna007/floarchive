@@ -1,4 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { getViewFromHash, getRouteFromHash, VIEWS } from './constants'
 import { Header } from './components'
 import { getStoredBgColor, setStoredBgColor } from './components/BackgroundColorPicker'
@@ -10,24 +11,16 @@ const SoundAnalysis = lazy(() => import('./pages/SoundAnalysis'))
 const FullListView = lazy(() => import('./components/FullListView'))
 const ThumbnailView = lazy(() => import('./components/ThumbnailView'))
 
-const THEME_KEY = 'floarchive-theme'
-
-function getInitialTheme() {
-  const saved = localStorage.getItem(THEME_KEY)
-  if (saved === 'dark' || saved === 'light') return saved
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-}
-
 export default function App() {
   const [view, setView] = useState(getViewFromHash)
   const [route, setRoute] = useState(getRouteFromHash)
   const [selectedId, setSelectedId] = useState(null)
-  const [theme, setTheme] = useState(getInitialTheme)
   const [bgColor, setBgColor] = useState(getStoredBgColor())
+  const theme = useSelector((state) => state.ui.theme)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem(THEME_KEY, theme)
   }, [theme])
 
   useEffect(() => {
@@ -41,7 +34,7 @@ export default function App() {
   }, [bgColor])
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+    dispatch({ type: 'ui/toggleTheme' })
   }
 
   useEffect(() => {

@@ -14,10 +14,12 @@
     "data:import": "node src/data/csv-to-archive.js"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
     "mapbox-gl": "^3.20.0",
     "ml-fft": "^1.3.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0"
   },
   "optionalDependencies": {
     "@esbuild/linux-x64": "0.27.3",

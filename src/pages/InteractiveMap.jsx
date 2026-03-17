@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { archive } from '../data/archive'
@@ -6,8 +7,18 @@ import { GEOJSON_LAYERS } from '../data/geojsonLayers'
 import DetailPanel from '../components/DetailPanel'
 import InteractiveTimeline from '../components/InteractiveTimeline'
 import MapLayersPanel from '../components/MapLayersPanel'
-import { getTimeRange, filterItemsByRange } from '../utils/datetime'
+import { filterItemsByRange } from '../utils/datetime'
 import { getItemPrimaryColor } from '../utils/categoryColors'
+import {
+  selectTimeline,
+  selectItemsInView,
+  selectSelectedItemId,
+  selectViewRange,
+  selectFullRange,
+  setViewRange,
+  selectItem,
+} from '../store/timelineSlice'
+import { selectVisibleLayerIds, toggleLayer } from '../store/mapSlice'
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN
 const MAP_STYLE_LIGHT = 'mapbox://styles/ikerluna/cmmp9964u005401rzhlycalmk'
@@ -24,8 +35,6 @@ const itemsWithDatetime = archive.filter(
 const itemsWithDatetimeAndCoords = itemsWithDatetime.filter(
   (item) => item.coordinates && item.coordinates.lat != null && item.coordinates.lng != null
 )
-
-const fullRange = getTimeRange(itemsWithDatetime)
 
 function createMapMarker(item, map, onSelect) {
   const [lng, lat] = [item.coordinates.lng, item.coordinates.lat]
@@ -146,22 +155,24 @@ async function addGeojsonLayer(map, layerConfig, visible) {
 }
 
 export default function InteractiveMap({ theme = 'light' }) {
+  const dispatch = useDispatch()
+  const { fullRange } = useSelector(selectTimeline)
+  const viewRange = useSelector(selectViewRange)
+  const selectedItemId = useSelector(selectSelectedItemId)
+  const visibleLayerIds = useSelector(selectVisibleLayerIds)
+  const visibleItems = useSelector(selectItemsInView)
   const mapStyle = theme === 'dark' ? MAP_STYLE_DARK : MAP_STYLE_LIGHT
   const mapContainer = useRef(null)
   const mapRef = useRef(null)
   const markersRef = useRef([])
   const geojsonLayerIdsRef = useRef([])
-  const [selectedItem, setSelectedItem] = useState(null)
-  const [visibleLayerIds, setVisibleLayerIds] = useState([])
-  const [viewRange, setViewRange] = useState({ min: fullRange.min, max: fullRange.max })
-
-  const visibleItems = useMemo(
-    () => filterItemsByRange(itemsWithDatetime, viewRange.min, viewRange.max),
-    [viewRange.min, viewRange.max]
+  const selectedItem = useMemo(
+    () => itemsWithDatetime.find((i) => i.id === selectedItemId) || null,
+    [selectedItemId]
   )
 
   const handleSelectItem = (item) => {
-    setSelectedItem(item)
+    dispatch(selectItem(item ? item.id : null))
     if (item?.coordinates && mapRef.current) {
       const [lng, lat] = [item.coordinates.lng, item.coordinates.lat]
       mapRef.current.flyTo({ center: [lng, lat], zoom: 14, duration: 800 })
@@ -170,9 +181,9 @@ export default function InteractiveMap({ theme = 'light' }) {
 
   useEffect(() => {
     if (selectedItem && !visibleItems.some((i) => i.id === selectedItem.id)) {
-      setSelectedItem(null)
+      dispatch(selectItem(null))
     }
-  }, [visibleItems, selectedItem])
+  }, [visibleItems, selectedItem, dispatch])
 
   const handleSelectRef = useRef(handleSelectItem)
   handleSelectRef.current = handleSelectItem
@@ -302,9 +313,7 @@ export default function InteractiveMap({ theme = 'light' }) {
   }
 
   const handleToggleLayer = (layerId) => {
-    setVisibleLayerIds((prev) =>
-      prev.includes(layerId) ? prev.filter((id) => id !== layerId) : [...prev, layerId]
-    )
+    dispatch(toggleLayer(layerId))
   }
 
   return (
@@ -316,7 +325,7 @@ export default function InteractiveMap({ theme = 'light' }) {
           selectedItem={selectedItem}
           onSelectItem={handleSelectItem}
           viewRange={viewRange}
-          onViewRangeChange={setViewRange}
+          onViewRangeChange={(range) => dispatch(setViewRange(range))}
           fullRange={fullRange}
         />
       </div>
@@ -340,7 +349,7 @@ export default function InteractiveMap({ theme = 'light' }) {
           <button
             type="button"
             className="interactive-map-close"
-            onClick={() => setSelectedItem(null)}
+            onClick={() => dispatch(selectItem(null))}
             aria-label="Close detail panel"
           >
             ×
