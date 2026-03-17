@@ -536,7 +536,7 @@
 .category-label {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 0.75rem 0 0.5rem;
+  margin: 0.75rem 0 0.8rem;  /* Increased bottom margin from 0.5rem to 0.8rem */
   letter-spacing: 0.02em;
 }
 
