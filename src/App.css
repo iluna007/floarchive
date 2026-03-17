@@ -822,14 +822,15 @@
 .sound-year-label {
   font-size: 1rem;
   font-weight: 600;
-  margin: 1.5rem 0 1.5rem;  /* Equal top and bottom margin */
+  margin: 1.25rem 0 1.25rem;  /* Equal top and bottom margin */
   padding-top: 0.35rem;
-  line-height: 1;
+  line-height: 1.2;
   color: var(--color-text-muted);
 }
 
+/* Add this new rule for the first year label */
 .sound-year-group:first-child .sound-year-label {
-  margin-top: 0;
+  margin-top: 2rem;  /* Extra space only for the first year */
 }
 
 .sound-track-row {
