@@ -824,7 +824,7 @@
   font-weight: 600;
   margin: 1.25rem 0 1.25rem;  /* Equal top and bottom margin */
   padding-top: 0.35rem;
-  line-height: 1.2;
+  line-height: 1.1;
   color: var(--color-text-muted);
 }
 
