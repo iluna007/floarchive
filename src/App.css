@@ -1,4 +1,4 @@
-/* Maxton O'Connor inspired aesthetic - minimal, editorial */
+ /* Maxton O'Connor inspired aesthetic - minimal, editorial */
 
 .app {
   min-height: 100vh;
@@ -920,7 +920,7 @@
 
 .sound-track-info {
   display: flex;
-  flex-direction: columnn;
+  flex-direction: column;
   gap: 0.15rem;
   min-width: 0;
 }
