@@ -13,13 +13,22 @@
   font-display: swap;
 }
 
+/* Your ChonkyPixels font */
+@font-face {
+  font-family: 'ChonkyPixels';
+  src: url('/fonts/ChonkyPixels.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
 
 :root,
 [data-theme="light"] {
-  font-family: 'IBM VGA 8x16', 'Source Sans 3', ui-monospace, monospace;
+  font-family: 'ChonkyPixels', 'IBM VGA 8x16', 'Source Sans 3', ui-monospace, monospace;
   /* Native size for 8x16 font: doc says "font-size and line-height of [height]px" */
   font-size: 16px;
   line-height: 1em;
