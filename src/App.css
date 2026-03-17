@@ -830,7 +830,7 @@
 
 /* Add this new rule for the first year label */
 .sound-year-group:first-child .sound-year-label {
-  margin-top: 1.2rem;  /* Extra space only for the first year */
+  margin-top: 1.3rem;  /* Extra space only for the first year */
 }
 
 .sound-track-row {
