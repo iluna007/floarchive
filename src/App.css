@@ -537,7 +537,7 @@
   font-size: 1.5rem;
   font-weight: 400;
   margin: 1rem 0 0.5rem;
-  padding-top: 0.35rem;  /* This pushes the text down */
+  padding-top: 0.45rem;  /* This pushes the text down */
   letter-spacing: 0.02em;
   line-height: 1.4;      /* Adds a bit more breathing room */
 }
