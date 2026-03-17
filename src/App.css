@@ -1,3 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/*
+ * IBM VGA 8x16 – Oldschool PC Font Pack (v2.2).
+ * Loaded from jsDelivr CDN (mirror of int10h pack) to avoid "Failed to decode" with corrupted local files.
+ * Source: https://github.com/potatoes1286/oldschool-pc-fonts-gh | Original: https://int10h.org/oldschool-pc-fonts/
+ */
+@font-face {
+  font-family: 'IBM VGA 8x16';
+  src: url('https://cdn.jsdelivr.net/gh/potatoes1286/oldschool-pc-fonts-gh@main/woff%20-%20Web%20(webfonts)/Web437_IBM_VGA_8x16.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Your ChonkyPixels font */
+@font-face {
+  font-family: 'ChonkyPixels';
+  src: url('/fonts/ChonkyPixels.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root,
+[data-theme="light"] {
+  font-family: 'ChonkyPixels', 'IBM VGA 8x16', 'Source Sans 3', ui-monospace, monospace;
+  /* Native size for 8x16 font: doc says "font-size and line-height of [height]px" */
+  font-size: 16px;
+  line-height: 1em;
+  font-weight: 600;
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+
+  /* Light theme */
+  --color-bg: #fafafa;
+  --color-bg-secondary: #f5f5f5;
+  --color-text: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-text-dim: #888888;
+  --color-text-placeholder: #999999;
+  --color-border: #000000;
+  --color-focus: #1a1a1a;
+
+  /* Responsive breakpoints */
+  --bp-sm: 480px;
+  --bp-md: 600px;
+  --bp-lg: 768px;
+  --bp-xl: 900px;
+  --bp-2xl: 1200px;
+  --touch-target-min: 44px;
+  --safe-area-top: env(safe-area-inset-top, 0);
+  --safe-area-right: env(safe-area-inset-right, 0);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0);
+  --safe-area-left: env(safe-area-inset-left, 0);
+}
+
+[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+  --color-bg-secondary: #1a1a1a;
+  --color-text: #ffffff;
+  --color-text-secondary: #e5e5e5;
+  --color-text-muted: #a3a3a3;
+  --color-text-dim: #737373;
+  --color-text-placeholder: #525252;
+  --color-border: #ffffff;
+  --color-focus: #ffffff;
+}
+
+:root {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+  min-height: 100vh;
+  padding: var(--safe-area-top) var(--safe-area-right) var(--safe-area-bottom) var(--safe-area-left);
+}
+
+#root {
+  min-height: 100vh;
+}
+
 /* Maxton O'Connor inspired aesthetic - minimal, editorial */
 
 .app {
@@ -537,9 +629,9 @@
   font-size: 1.5rem;
   font-weight: 400;
   margin: 1rem 0 0.5rem;
-  padding-top: 0.35rem;  /* This pushes the text down */
+  padding-top: 0.35rem;
   letter-spacing: 0.02em;
-  line-height: 1.2;      /* Adds a bit more breathing room */
+  line-height: 1.2;
 }
 
 .year-label:first-child,
@@ -822,7 +914,7 @@
 .sound-year-label {
   font-size: 1rem;
   font-weight: 600;
-  margin: 1.25rem 0 1.25rem;  /* Equal top and bottom margin */
+  margin: 1.25rem 0 1.25rem;
   padding-top: 0.35rem;
   line-height: 1.2;
   color: var(--color-text-muted);
@@ -830,7 +922,7 @@
 
 /* Add this new rule for the first year label */
 .sound-year-group:first-child .sound-year-label {
-  margin-top: 1.3rem;  /* Extra space only for the first year */
+  margin-top: 1.3rem;
 }
 
 .sound-track-row {
@@ -1808,7 +1900,23 @@
 /* Mobile */
 @media (max-width: 600px) {
   .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0.75rem 1rem;
+  }
+
+  .main-nav-links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .main-nav-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.5rem;
   }
 
   .main-nav-link {
@@ -1841,7 +1949,17 @@
   }
 
   .detail-panel {
-    padding: 0 1rem 1rem;
+    padding: 0 0.75rem 1rem;
+  }
+
+  .detail-panel .detail-title {
+    font-size: 1rem;
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .detail-panel .project-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 
   .footer {
@@ -1864,13 +1982,15 @@
   /* Sound Analysis - mobile: compact grid */
   .sound-track-header,
   .sound-track-row {
-    grid-template-columns: 2rem 1.5rem 2.5rem 1fr 3rem;
-    gap: 0.4rem 0.5rem;
-    font-size: 0.7rem;
+    grid-template-columns: 1.8rem 1.5rem 2rem 1fr 2.5rem;
+    gap: 0.25rem;
+    font-size: 0.65rem;
   }
 
   .sound-track-header .sound-track-header-waveform,
-  .sound-track-row .sound-track-waveform {
+  .sound-track-row .sound-track-waveform,
+  .sound-track-header .sound-track-header-duration,
+  .sound-track-row .sound-track-duration {
     display: none;
   }
 
@@ -1881,23 +2001,28 @@
   }
 
   .sound-track-play {
-    width: 1.75rem;
-    height: 1.75rem;
-    font-size: 0.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.55rem;
   }
 
   .sound-track-artwork {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .sound-track-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    white-space: normal;
   }
 
-  .sound-track-meta,
-  .sound-track-duration {
-    font-size: 0.75rem;
+  .sound-track-meta {
+    font-size: 0.65rem;
+  }
+
+  .sound-year-label {
+    font-size: 0.9rem;
+    margin: 1rem 0 0.75rem;
   }
 
   .sound-analysis-table-container {
@@ -1925,14 +2050,46 @@
     padding: 0.5rem 0.25rem 0.5rem 0;
   }
 
+  /* Force single column for project rows */
   .project-row {
-    gap: 0.25rem 0.75rem;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.25rem;
+    padding: 0.75rem 0;
+  }
+
+  .project-row .project-date {
+    grid-row: 1;
+    font-size: 0.8rem;
+  }
+
+  .project-row .project-title {
+    grid-row: 2;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .project-row .project-category {
+    grid-row: 3;
+    grid-column: 1;
+    font-size: 0.75rem;
+  }
+
+  .project-row .project-status {
+    grid-row: 4;
+    grid-column: 1;
+    font-size: 0.75rem;
+  }
+
+  /* Hide table header on very small screens */
+  .table-header {
+    display: none;
   }
 
   .year-label,
   .category-label {
-    font-size: 1.25rem;
-    margin: 1.5rem 0 0.75rem;
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
   }
 
   /* Interactive map - very small screens */
@@ -1961,5 +2118,32 @@
 
   .footer-separator {
     display: none;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .main-nav-links {
+    gap: 0.25rem;
+  }
+
+  .main-nav-link {
+    font-size: 0.75rem;
+    padding: 0.35rem 0;
+  }
+
+  .project-row .project-title {
+    font-size: 0.9rem;
+  }
+
+  .project-row .project-category,
+  .project-row .project-status {
+    font-size: 0.7rem;
+  }
+
+  .footer-content {
+    font-size: 0.7rem;
+    flex-direction: column;
+    gap: 0.15rem;
   }
 }
