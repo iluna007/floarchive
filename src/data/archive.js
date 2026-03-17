@@ -27,7 +27,7 @@ export const archive = [
     ],
     "description": "Generic description for item 1.",
     "images": [
-      "https://placehold.co/800x500/9CAF88/000000/png"
+      "https://picsum.photos/seed/1/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -59,7 +59,7 @@ export const archive = [
     ],
     "description": "Generic description for item 2.",
     "images": [
-      "https://placehold.co/800x500/FF0000/FFFFFF/png"
+      "https://picsum.photos/seed/2/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -90,7 +90,7 @@ export const archive = [
     ],
     "description": "Generic description for item 3.",
     "images": [
-      "https://placehold.co/800x500/C5A48D/000000/png"
+      "https://picsum.photos/seed/3/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -123,7 +123,7 @@ export const archive = [
     ],
     "description": "Generic description for item 4.",
     "images": [
-      "https://placehold.co/800x500/FFFFFF/000000/png"
+      "https://picsum.photos/seed/4/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -154,8 +154,8 @@ export const archive = [
     ],
     "description": "Generic description for item 5.",
     "images": [
-      "https://placehold.co/800x500/FFFF00/000000/png",
-      "https://placehold.co/800x500/FFFF00/000000/png"
+      "https://picsum.photos/seed/5a/800/500",
+      "https://picsum.photos/seed/5b/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -187,7 +187,7 @@ export const archive = [
     ],
     "description": "Generic description for item 6.",
     "images": [
-      "https://placehold.co/800x500/8BB5A0/000000/png"
+      "https://picsum.photos/seed/6/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -218,7 +218,7 @@ export const archive = [
     ],
     "description": "Generic description for item 7.",
     "images": [
-      "https://placehold.co/800x500/39FF14/000000/png"
+      "https://picsum.photos/seed/7/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -250,7 +250,7 @@ export const archive = [
     ],
     "description": "Generic description for item 8.",
     "images": [
-      "https://placehold.co/800x500/D4C5AA/000000/png"
+      "https://picsum.photos/seed/8/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -281,7 +281,7 @@ export const archive = [
     ],
     "description": "Generic description for item 9.",
     "images": [
-      "https://placehold.co/800x500/A3A9AA/000000/png"
+      "https://picsum.photos/seed/9/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -313,7 +313,7 @@ export const archive = [
     ],
     "description": "Generic description for item 10.",
     "images": [
-      "https://placehold.co/800x500/C97C5D/000000/png"
+      "https://picsum.photos/seed/10/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -345,7 +345,7 @@ export const archive = [
     ],
     "description": "Generic description for item 11.",
     "images": [
-      "https://placehold.co/800x500/7A8B6B/FFFFFF/png"
+      "https://picsum.photos/seed/11/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -377,7 +377,7 @@ export const archive = [
     ],
     "description": "Generic description for item 12.",
     "images": [
-      "https://placehold.co/800x500/9A8B9F/FFFFFF/png"
+      "https://picsum.photos/seed/12/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -409,7 +409,7 @@ export const archive = [
     ],
     "description": "Generic description for item 13.",
     "images": [
-      "https://placehold.co/800x500/2F4F2F/FFFFFF/png"
+      "https://picsum.photos/seed/13/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -440,7 +440,7 @@ export const archive = [
     ],
     "description": "Generic description for item 14.",
     "images": [
-      "https://placehold.co/800x500/C9B9A3/000000/png"
+      "https://picsum.photos/seed/14/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -473,7 +473,7 @@ export const archive = [
     ],
     "description": "Generic description for item 15.",
     "images": [
-      "https://placehold.co/800x500/0000FF/FFFFFF/png"
+      "https://picsum.photos/seed/15/800/500"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
