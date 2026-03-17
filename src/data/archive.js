@@ -7,10 +7,10 @@ export const archive = [
   {
     "id": "1",
     "title": "Item 1",
-    "date": "06.2024",
-    "year": 2024,
+    "date": "06.2026",
+    "year": 2026,
     "datetime": {
-      "year": 2024,
+      "year": 2026,
       "month": 6,
       "day": 15,
       "hour": 14,
@@ -38,10 +38,10 @@ export const archive = [
   {
     "id": "2",
     "title": "Item 2",
-    "date": "06.2024",
-    "year": 2024,
+    "date": "06.2026",
+    "year": 2026,
     "datetime": {
-      "year": 2024,
+      "year": 2026,
       "month": 6,
       "day": 8,
       "hour": 10,
@@ -70,10 +70,10 @@ export const archive = [
   {
     "id": "3",
     "title": "Item 3",
-    "date": "05.2024",
-    "year": 2024,
+    "date": "05.2026",
+    "year": 2026,
     "datetime": {
-      "year": 2024,
+      "year": 2026,
       "month": 5,
       "day": 22,
       "hour": 16,
@@ -101,10 +101,10 @@ export const archive = [
   {
     "id": "4",
     "title": "Item 4",
-    "date": "03.2024",
-    "year": 2024,
+    "date": "03.2026",
+    "year": 2026,
     "datetime": {
-      "year": 2024,
+      "year": 2026,
       "month": 3,
       "day": 12,
       "hour": 9,
@@ -134,10 +134,10 @@ export const archive = [
   {
     "id": "5",
     "title": "Item 5",
-    "date": "12.2023",
-    "year": 2023,
+    "date": "12.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 12,
       "day": 18,
       "hour": 11,
@@ -166,10 +166,10 @@ export const archive = [
   {
     "id": "6",
     "title": "Item 6",
-    "date": "12.2023",
-    "year": 2023,
+    "date": "12.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 12,
       "day": 10,
       "hour": 15,
@@ -198,10 +198,10 @@ export const archive = [
   {
     "id": "7",
     "title": "Item 7",
-    "date": "11.2023",
-    "year": 2023,
+    "date": "11.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 11,
       "day": 25,
       "hour": 8,
@@ -229,10 +229,10 @@ export const archive = [
   {
     "id": "8",
     "title": "Item 8",
-    "date": "10.2023",
-    "year": 2023,
+    "date": "10.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 10,
       "day": 5,
       "hour": 18,
@@ -261,10 +261,10 @@ export const archive = [
   {
     "id": "9",
     "title": "Item 9",
-    "date": "09.2023",
-    "year": 2023,
+    "date": "09.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 9,
       "day": 14,
       "hour": 12,
@@ -292,10 +292,10 @@ export const archive = [
   {
     "id": "10",
     "title": "Item 10",
-    "date": "06.2023",
-    "year": 2023,
+    "date": "06.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 6,
       "day": 20,
       "hour": 14,
@@ -324,10 +324,10 @@ export const archive = [
   {
     "id": "11",
     "title": "Item 11",
-    "date": "04.2023",
-    "year": 2023,
+    "date": "04.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 4,
       "day": 7,
       "hour": 10,
@@ -356,10 +356,10 @@ export const archive = [
   {
     "id": "12",
     "title": "Item 12",
-    "date": "02.2023",
-    "year": 2023,
+    "date": "02.2025",
+    "year": 2025,
     "datetime": {
-      "year": 2023,
+      "year": 2025,
       "month": 2,
       "day": 28,
       "hour": 11,
@@ -388,10 +388,10 @@ export const archive = [
   {
     "id": "13",
     "title": "Item 13",
-    "date": "10.2022",
-    "year": 2022,
+    "date": "10.2024",
+    "year": 2024,
     "datetime": {
-      "year": 2022,
+      "year": 2024,
       "month": 10,
       "day": 12,
       "hour": 16,
@@ -420,10 +420,10 @@ export const archive = [
   {
     "id": "14",
     "title": "Item 14",
-    "date": "09.2022",
-    "year": 2022,
+    "date": "09.2024",
+    "year": 2024,
     "datetime": {
-      "year": 2022,
+      "year": 2024,
       "month": 9,
       "day": 3,
       "hour": 9,
@@ -451,10 +451,10 @@ export const archive = [
   {
     "id": "15",
     "title": "Item 15",
-    "date": "10.2021",
-    "year": 2021,
+    "date": "10.2023",
+    "year": 2023,
     "datetime": {
-      "year": 2021,
+      "year": 2023,
       "month": 10,
       "day": 20,
       "hour": 7,
