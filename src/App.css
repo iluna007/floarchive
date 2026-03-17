@@ -539,7 +539,7 @@
   margin: 1rem 0 0.5rem;
   padding-top: 0.35rem;  /* This pushes the text down */
   letter-spacing: 0.02em;
-  line-height: 1.2;      /* Adds a bit more breathing room */
+  line-height: 1;      /* Adds a bit more breathing room */
 }
 
 .year-label:first-child,
