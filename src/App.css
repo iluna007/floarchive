@@ -536,8 +536,10 @@
 .category-label {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 0.75rem 0 0.8rem;  /* Increased bottom margin from 0.5rem to 0.8rem */
+  margin: 1rem 0 0.5rem;
+  padding-top: 0.35rem;  /* This pushes the text down */
   letter-spacing: 0.02em;
+  line-height: 1.2;      /* Adds a bit more breathing room */
 }
 
 .year-label:first-child,
