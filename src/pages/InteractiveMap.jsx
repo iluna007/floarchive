@@ -153,7 +153,6 @@ export default function InteractiveMap({ theme = 'light' }) {
   const geojsonLayerIdsRef = useRef([])
   const [selectedItem, setSelectedItem] = useState(null)
   const [visibleLayerIds, setVisibleLayerIds] = useState([])
-  const [timelineScale, setTimelineScale] = useState('month')
   const [viewRange, setViewRange] = useState({ min: fullRange.min, max: fullRange.max })
 
   const visibleItems = useMemo(
@@ -316,8 +315,6 @@ export default function InteractiveMap({ theme = 'light' }) {
           visibleItems={visibleItems}
           selectedItem={selectedItem}
           onSelectItem={handleSelectItem}
-          scale={timelineScale}
-          onScaleChange={setTimelineScale}
           viewRange={viewRange}
           onViewRangeChange={setViewRange}
           fullRange={fullRange}

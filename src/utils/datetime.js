@@ -21,7 +21,13 @@ export function getTimeRange(items) {
   const withDt = items.filter((i) => i.datetime && toTimestamp(i.datetime) > 0)
   if (withDt.length === 0) return { min: 0, max: Date.now() }
   const timestamps = withDt.map((i) => toTimestamp(i.datetime))
-  return { min: Math.min(...timestamps), max: Math.max(...timestamps) }
+  const minTs = Math.min(...timestamps)
+  const maxTs = Math.max(...timestamps)
+  const minDate = new Date(minTs)
+  const maxDate = new Date(maxTs)
+  const paddedMin = new Date(minDate.getFullYear() - 2, 0, 1).getTime()
+  const paddedMax = new Date(maxDate.getFullYear() + 3, 0, 1).getTime()
+  return { min: paddedMin, max: paddedMax }
 }
 
 /**
@@ -54,6 +60,20 @@ export function findNearestItem(items, timestamp) {
 }
 
 export const SCALES = ['year', 'month', 'day', 'hour', 'minute', 'second']
+
+/** Pick appropriate scale for display based on range size in ms */
+export function getScaleFromRangeMs(rangeMs) {
+  const day = 86400000
+  const hour = 3600000
+  const min = 60000
+  const sec = 1000
+  if (rangeMs <= 2 * min) return 'second'
+  if (rangeMs <= 2 * hour) return 'minute'
+  if (rangeMs <= 2 * day) return 'hour'
+  if (rangeMs <= 60 * day) return 'day'
+  if (rangeMs <= 730 * day) return 'month'
+  return 'year'
+}
 
 /** Milliseconds per unit for each scale (for wheel navigation) */
 export function getScaleUnitMs(scale) {

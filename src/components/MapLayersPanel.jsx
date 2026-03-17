@@ -19,7 +19,7 @@ export default function MapLayersPanel({ layers = [], visibleLayerIds = [], onTo
       if (panelRef.current && !panelRef.current.contains(e.target)) setOpen(false)
     }
     document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutcapside)
+    return () => document.removeEventListener('click', handleClickOutside)
   }, [open])
 
   return (
