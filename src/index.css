@@ -32,7 +32,7 @@
   /* Native size for 8x16 font: doc says "font-size and line-height of [height]px" */
   font-size: 16px;
   line-height: 1em;
-  font-weight: 600;
+  font-weight: 700;
   font-synthesis: none;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: none;
