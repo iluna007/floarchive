@@ -123,7 +123,7 @@ export const archive = [
     ],
     "description": "Generic description for item 4.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF9933'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FF9900'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -154,8 +154,8 @@ export const archive = [
     ],
     "description": "Generic description for item 5.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFCC33'/%3E%3C/svg%3E",
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFCC33'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFCC00'/%3E%3C/svg%3E",
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFCC00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -187,7 +187,7 @@ export const archive = [
     ],
     "description": "Generic description for item 6.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23CCCC33'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23FFFF00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -218,7 +218,7 @@ export const archive = [
     ],
     "description": "Generic description for item 7.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2399CC33'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23CCFF00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -250,7 +250,7 @@ export const archive = [
     ],
     "description": "Generic description for item 8.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2366CC33'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2399FF00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -281,7 +281,7 @@ export const archive = [
     ],
     "description": "Generic description for item 9.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333CC33'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2366FF00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -313,7 +313,7 @@ export const archive = [
     ],
     "description": "Generic description for item 10.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333CC66'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333FF00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -345,7 +345,7 @@ export const archive = [
     ],
     "description": "Generic description for item 11.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333CC99'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2300FF00'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -377,7 +377,7 @@ export const archive = [
     ],
     "description": "Generic description for item 12.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333CCCC'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333FF33'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
@@ -409,7 +409,7 @@ export const archive = [
     ],
     "description": "Generic description for item 13.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333CC66'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2366FF66'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba3.WAV', import.meta.url).href,
@@ -440,7 +440,7 @@ export const archive = [
     ],
     "description": "Generic description for item 14.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2333CC33'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2399FF99'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba1.mp4', import.meta.url).href,
@@ -473,7 +473,7 @@ export const archive = [
     ],
     "description": "Generic description for item 15.",
     "images": [
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%2300CC00'/%3E%3C/svg%3E"
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23CCFFCC'/%3E%3C/svg%3E"
     ],
     "video": null,
     "audioRecording": new URL('./audio files/prueba2.mp4', import.meta.url).href,
