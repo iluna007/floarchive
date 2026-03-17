@@ -1,8 +1,14 @@
 import { useState, useRef, useEffect } from 'react'
-import { viridis, FREQ_MIN, FREQ_MAX, MIN_THRESHOLD_DB } from '../utils/spectrogramUtils'
+import { FREQ_MIN, FREQ_MAX, MIN_THRESHOLD_DB } from '../utils/spectrogramUtils'
 
 const PADDING = 8
 const LAYOUT = { width: 920, height: 520, leftColW: 90, rightColW: 810, topRowH: 380, bottomRowH: 120 }
+
+// Black to red color map
+function blackToRed(t) {
+  // t goes from 0 (lowest/black) to 1 (highest/red)
+  return [t, 0, 0];  // Red channel increases, green and blue stay at 0
+}
 
 export default function SpectrogramCanvas({ data }) {
   const canvasRef = useRef(null)
@@ -87,7 +93,7 @@ export default function SpectrogramCanvas({ data }) {
         const timeIdx = Math.min(Math.floor((px / specW) * nWindows), nWindows - 1)
         const db = SxxFiltered[freqIdx * nWindows + timeIdx]
         const t = (db - specDbMin) / specDbRange
-        const [r, g, b] = viridis(Math.max(0, Math.min(1, t)))
+        const [r, g, b] = blackToRed(Math.max(0, Math.min(1, t)))
         const i = (py * specW + px) * 4
         specImageData.data[i] = Math.round(r * 255)
         specImageData.data[i + 1] = Math.round(g * 255)
@@ -152,7 +158,7 @@ export default function SpectrogramCanvas({ data }) {
     ctx.fillRect(cbarLeft, waveTop, cbarWidth, waveHeight)
     for (let i = 0; i < cbarWidth; i++) {
       const t = i / cbarWidth
-      const [r, g, b] = viridis(t)
+      const [r, g, b] = blackToRed(t)
       ctx.fillStyle = 'rgb(' + Math.round(r*255) + ',' + Math.round(g*255) + ',' + Math.round(b*255) + ')'
       ctx.fillRect(cbarLeft + i, cbarY, 1, cbarH)
     }
@@ -180,7 +186,7 @@ export default function SpectrogramCanvas({ data }) {
     return () => {
       audio.removeEventListener('timeupdate', onTimeUpdate)
       audio.removeEventListener('ended', onEnded)
-      audio.removeEventListener('play', onPause)
+      audio.removeEventListener('play', onPlay)
       audio.removeEventListener('pause', onPause)
     }
   }, [audioUrl])
