@@ -77,8 +77,8 @@ export default function Reflections() {
           {/* Judean Desert image */}
           <div style={{ margin: '2rem 0' }}>
             <img 
-              src="/Judean_Desert.png" 
-              alt="Judean Desert landscape"
+              src="/Bird_EMF2.png" 
+              alt="Bird EMF"
               style={{ 
                 width: '100%',
                 height: 'auto',
