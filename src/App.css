@@ -760,10 +760,9 @@
   max-width: 65ch;
   margin-left: auto;
   margin-right: auto;
-  font-size: 2rem;          /* Added - bigger text */
+  font-size: 1.6rem;          /* Added - bigger text */
   line-height: 1.3;            /* Added - more space between lines */
   text-align: justify;        /* Added - justifies the text */
-  hyphens: auto;               /* Optional - adds hyphens when words break */
 }
 
 .page-placeholder p:last-child {
