@@ -19,7 +19,7 @@ export default function Reflections() {
           lineHeight: '1.3',
           color: 'var(--color-text)'
         }}>
-          Aerolectrosonic:
+          Aerolectrosonic
         </h2>
         <h3 style={{ 
           fontSize: '1.4rem', 
