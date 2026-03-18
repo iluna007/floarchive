@@ -8,7 +8,7 @@ export default function Reflections() {
       
       {/* Title section - at left margin */}
       <div style={{ 
-        marginBottom: '2rem',
+        marginBottom: '1rem',
         paddingLeft: '2rem',
         paddingRight: '2rem'
       }}>
@@ -19,7 +19,7 @@ export default function Reflections() {
           lineHeight: '1.3',
           color: 'var(--color-text)'
         }}>
-          Aerolectrosonic
+          Aerolectrosonic:
         </h2>
         <h3 style={{ 
           fontSize: '1.4rem', 
@@ -34,14 +34,38 @@ export default function Reflections() {
         </h3>
       </div>
       
-      {/* Text and image section - left-aligned with constrained width */}
+      {/* Map image section - added after titles */}
+      <div style={{ 
+        paddingLeft: '2rem',
+        paddingRight: '2rem',
+        marginBottom: '2rem'
+      }}>
+        <div style={{
+          maxWidth: '75ch',
+          marginRight: 'auto'
+        }}>
+          <img 
+            src="/Map_1.png" 
+            alt="Map of the region"
+            style={{ 
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+            }}
+          />
+        </div>
+      </div>
+      
+      {/* Text and second image section */}
       <div style={{ 
         paddingLeft: '2rem',
         paddingRight: '2rem'
       }}>
         <div style={{
-          maxWidth: '110ch',        /* Limits width for readability */
-          marginRight: 'auto'       /* Keeps it left-aligned */
+          maxWidth: '75ch',
+          marginRight: 'auto'
         }}>
           <p style={{
             marginBottom: '1.5rem',
@@ -57,6 +81,7 @@ export default function Reflections() {
             textAlign: 'justify'
           }}>Starting from that case, I began tracing the networks surrounding it: conservation monitoring projects, migration research, and the infrastructures used to track birds across the region. Much of the initial information came from online reports, datasets, and archival material, but these sources also pointed toward specific sites and people connected to the work. Following those traces led me to conduct fieldwork across Palestine and Israel. During this process I visited monitoring areas and landscapes along migration routes, recorded bird vocalisations and environmental sound, and carried out interviews with scientists and conservation workers involved in tracking and protecting birds.</p>
           
+          {/* First image (Judean Desert) - now positioned here */}
           <div style={{ margin: '2rem 0' }}>
             <img 
               src="/Judean_Desert.png" 
