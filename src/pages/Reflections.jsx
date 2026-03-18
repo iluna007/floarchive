@@ -6,8 +6,11 @@ export default function Reflections() {
         Personal insights and reflections.
       </p>
       <div className="page-placeholder">
-        <p>Collection of personal notes and reflections.</p>
-        <p>Insights gathered throughout the project.</p>
+        <p>The project began through an investigation into a documented case involving a griffon vulture. The incident caught my attention because it revealed how birds moving through this region are not only part of ecological systems, but also move through highly monitored airspace shaped by sensing technologies and infrastructure.
+Starting from that case, I began tracing the networks surrounding it: conservation monitoring projects, migration research, and the infrastructures used to track birds across the region. Much of the initial information came from online reports, datasets, and archival material, but these sources also pointed toward specific sites and people connected to the work. Following those traces led me to conduct fieldwork across Palestine and Israel. During this process I visited monitoring areas and landscapes along migration routes, recorded bird vocalisations and environmental sound, and carried out interviews with scientists and conservation workers involved in tracking and protecting birds.
+While working with the recordings, I initially relied on standard civilian bioacoustic analysis tools. However, when using these tools with recordings made in the field in Palestine, I found that many of them were not always reliable or precise in capturing what I was hearing in the environment. This led me to pay closer attention to the aerial dynamics of the birds themselves — particularly how wing movement, air friction, and flight patterns shape the acoustic traces that appear in the recordings.
+As a result, the research began to shift toward listening not only to vocalisations but also to the broader sonic signatures produced through flight and movement in air. Alongside the field recordings, I analyse the material through spectrogram and spectral listening techniques, which allow these signals to be examined as traces of how birds move and communicate within this shared airspace. The expanded documentary brings together these elements: field recordings, observational footage, acoustic analysis, and fragments of interviews. The clip I will show now is a short extract from this work, which reflects how the research moves between field observation, listening, and the infrastructures that shape this aerial environment.
+</p>
       </div>
     </div>
   )
