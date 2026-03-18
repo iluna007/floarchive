@@ -40,7 +40,7 @@ export default function Reflections() {
         paddingRight: '2rem'
       }}>
         <div style={{
-          maxWidth: '100ch',        /* Limits width for readability */
+          maxWidth: '110ch',        /* Limits width for readability */
           marginRight: 'auto'       /* Keeps it left-aligned */
         }}>
           <p style={{
