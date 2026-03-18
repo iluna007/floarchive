@@ -757,6 +757,9 @@
 
 .page-placeholder p {
   margin: 0 0 0.5rem;
+  max-width: 65ch;        /* Limits width to 65 characters */
+  margin-left: auto;       /* Centers the text block */
+  margin-right: auto;      /* Centers the text block */
 }
 
 .page-placeholder p:last-child {
