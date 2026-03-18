@@ -6,7 +6,7 @@ export default function Reflections() {
         Personal insights and reflections.
       </p>
       
-      {/* Title section - at left margin */}
+      {/* Title section - at left margin (outside the width constraint) */}
       <div style={{ 
         marginBottom: '1rem',
         paddingLeft: '2rem',
@@ -34,39 +34,32 @@ export default function Reflections() {
         </h3>
       </div>
       
-      {/* Map image section - added after titles */}
-      <div style={{ 
-        paddingLeft: '2rem',
-        paddingRight: '2rem',
-        marginBottom: '2rem'
-      }}>
-        <div style={{
-          maxWidth: '100ch',
-          marginRight: 'auto'
-        }}>
-          <img 
-            src="/Map_1.png" 
-            alt="Map of the region"
-            style={{ 
-              width: '100%',
-              height: 'auto',
-              display: 'block',
-              borderRadius: '8px',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-            }}
-          />
-        </div>
-      </div>
-      
-      {/* Text and second image section */}
+      {/* SINGLE CONTAINER for all content with the same width */}
       <div style={{ 
         paddingLeft: '2rem',
         paddingRight: '2rem'
       }}>
         <div style={{
-          maxWidth: '75ch',
+          maxWidth: '100ch',        /* This controls width for ALL content inside */
           marginRight: 'auto'
         }}>
+          
+          {/* Map image */}
+          <div style={{ marginBottom: '2rem' }}>
+            <img 
+              src="/Map_1.png" 
+              alt="Map of the region"
+              style={{ 
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+              }}
+            />
+          </div>
+          
+          {/* Text paragraphs */}
           <p style={{
             marginBottom: '1.5rem',
             fontSize: '1.2rem',
@@ -81,7 +74,7 @@ export default function Reflections() {
             textAlign: 'justify'
           }}>Starting from that case, I began tracing the networks surrounding it: conservation monitoring projects, migration research, and the infrastructures used to track birds across the region. Much of the initial information came from online reports, datasets, and archival material, but these sources also pointed toward specific sites and people connected to the work. Following those traces led me to conduct fieldwork across Palestine and Israel. During this process I visited monitoring areas and landscapes along migration routes, recorded bird vocalisations and environmental sound, and carried out interviews with scientists and conservation workers involved in tracking and protecting birds.</p>
           
-          {/* First image (Judean Desert) - now positioned here */}
+          {/* Judean Desert image */}
           <div style={{ margin: '2rem 0' }}>
             <img 
               src="/Judean_Desert.png" 
@@ -96,6 +89,7 @@ export default function Reflections() {
             />
           </div>
           
+          {/* Remaining text */}
           <p style={{
             marginBottom: '1.5rem',
             fontSize: '1.2rem',
