@@ -760,7 +760,7 @@
   max-width: 65ch;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.2rem;          /* Added - bigger text */
+  font-size: 2rem;          /* Added - bigger text */
   line-height: 1.8;            /* Added - more space between lines */
 }
 
