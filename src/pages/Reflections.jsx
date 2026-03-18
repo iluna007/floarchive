@@ -7,38 +7,48 @@ export default function Reflections() {
       </p>
       <div className="page-placeholder">
         
-        <h2 style={{ 
-          fontSize: '1.8rem', 
-          fontWeight: '600', 
-          marginBottom: '0.5rem',
-          lineHeight: '1.3',
-          color: 'var(--color-text)'
+        {/* Title section now matches paragraph width and is centered */}
+        <div style={{ 
+          maxWidth: '65ch', 
+          marginLeft: 'auto', 
+          marginRight: 'auto',
+          width: '100%'
         }}>
-          Aerolectrosonic:
-        </h2>
-        <h3 style={{ 
-          fontSize: '1.4rem', 
-          fontWeight: '400', 
-          marginBottom: '2rem',
-          lineHeight: '1.4',
-          color: 'var(--color-text-secondary)',
-          fontStyle: 'italic'
-        }}>
-          Listening to Aerial Infrastructure in Palestine–Israel<br />
-          Birds as witnesses to airspace governance and ground regimes of access
-        </h3>
+          <h2 style={{ 
+            fontSize: '1.8rem', 
+            fontWeight: '600', 
+            marginBottom: '0.5rem',
+            lineHeight: '1.3',
+            color: 'var(--color-text)'
+          }}>
+            Aerolectrosonic:
+          </h2>
+          <h3 style={{ 
+            fontSize: '1.4rem', 
+            fontWeight: '400', 
+            marginBottom: '2rem',
+            lineHeight: '1.4',
+            color: 'var(--color-text-secondary)',
+            fontStyle: 'italic'
+          }}>
+            Listening to Aerial Infrastructure in Palestine–Israel<br />
+            Birds as witnesses to airspace governance and ground regimes of access
+          </h3>
+        </div>
         
         <p>The project began through an investigation into a documented case involving a griffon vulture. The incident caught my attention because it revealed how birds moving through this region are not only part of ecological systems, but also move through highly monitored airspace shaped by sensing technologies and infrastructure.</p>
         
         <p>Starting from that case, I began tracing the networks surrounding it: conservation monitoring projects, migration research, and the infrastructures used to track birds across the region. Much of the initial information came from online reports, datasets, and archival material, but these sources also pointed toward specific sites and people connected to the work. Following those traces led me to conduct fieldwork across Palestine and Israel. During this process I visited monitoring areas and landscapes along migration routes, recorded bird vocalisations and environmental sound, and carried out interviews with scientists and conservation workers involved in tracking and protecting birds.</p>
         
-        <div style={{ margin: '2rem 0', textAlign: 'center' }}>
+        {/* Image now matches paragraph width exactly */}
+        <div style={{ margin: '2rem 0' }}>
           <img 
             src="/Judean_Desert.png" 
             alt="Judean Desert landscape"
             style={{ 
-              maxWidth: '100%', 
+              width: '100%',
               height: 'auto',
+              display: 'block',
               borderRadius: '8px',
               boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
             }}
