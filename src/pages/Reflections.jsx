@@ -7,12 +7,13 @@ export default function Reflections() {
       </p>
       <div className="page-placeholder">
         
-        {/* Title section now matches paragraph width and is centered */}
+        {/* Title section now left-aligned but within the same width boundary */}
         <div style={{ 
           maxWidth: '65ch', 
           marginLeft: 'auto', 
           marginRight: 'auto',
-          width: '100%'
+          width: '100%',
+          textAlign: 'left'  /* Explicitly left-align the text */
         }}>
           <h2 style={{ 
             fontSize: '1.8rem', 
