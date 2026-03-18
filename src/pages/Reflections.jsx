@@ -41,7 +41,7 @@ export default function Reflections() {
         marginBottom: '2rem'
       }}>
         <div style={{
-          maxWidth: '75ch',
+          maxWidth: '100ch',
           marginRight: 'auto'
         }}>
           <img 
