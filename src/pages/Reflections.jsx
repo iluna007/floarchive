@@ -47,7 +47,7 @@ export default function Reflections() {
             src="/Judean_Desert.png" 
             alt="Judean Desert landscape"
             style={{ 
-              width: '100%',
+              width: '60%',
               height: 'auto',
               display: 'block',
               borderRadius: '8px',
