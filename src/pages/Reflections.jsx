@@ -102,7 +102,7 @@ export default function Reflections() {
             fontSize: '1.2rem',
             lineHeight: '1.8',
             textAlign: 'justify'
-          }}>As a result, the research began to shift toward listening not only to vocalisations but also to the broader sonic signatures produced through flight and movement in air. Alongside the field recordings, I analyse the material through spectrogram and spectral listening techniques, which allow these signals to be examined as traces of how birds move and communicate within this shared airspace. The expanded documentary brings together these elements: field recordings, observational footage, acoustic analysis, and fragments of interviews. The clip I will show now is a short extract from this work, which reflects how the research moves between field observation, listening, and the infrastructures that shape this aerial environment.</p>
+          }}>As a result, the research began to shift toward listening not only to vocalisations but also to the broader sonic signatures produced through flight and movement in air. Alongside the field recordings, I analyse the material through spectrogram and spectral listening techniques, which allow these signals to be examined as traces of how birds move and communicate within this shared airspace.</p>
         </div>
       </div>
     </div>
